@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js dev
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -15,15 +15,15 @@ Platform:
 
 npm manifest: 
   {
-    "name": "react-redux-boilerplate",
+    "name": "noughts and crosses reactjs build",
     "version": "0.1.0",
-    "description": "React Redux using express",
+    "description": "version 1 reactjs",
     "main": "server/index.js",
     "scripts": {
       "start": "webpack && node server",
       "dev": "nodemon --watch server & webpack --watch"
     },
-    "author": "Julia",
+    "author": "KIMMI",
     "license": "ISC",
     "babel": {
       "presets": [
@@ -39,8 +39,6 @@ npm manifest:
       "nodemon": "^1.14.12",
       "react": "^16.2.0",
       "react-dom": "^16.2.0",
-      "react-redux": "^5.0.6",
-      "redux": "^3.7.2",
       "webpack": "^3.11.0",
       "webpack-dev-server": "^2.11.1"
     },
@@ -4748,17 +4746,11 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: Command failed.
-  Exit code: 127
-  Command: sh
-  Arguments: -c nodemon --watch server & webpack --watch
-  Directory: /Users/kimmi/Documents/Workspace/react-redux-boilerplate-1
-  Output:
-  
-      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
-      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
-      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
-      at emitTwo (events.js:126:13)
-      at ChildProcess.emit (events.js:214:7)
-      at maybeClose (internal/child_process.js:925:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+  Error: package.json: Name contains illegal characters
+      at new MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
+      at module.exports.exports.default (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:37549:13)
+      at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:52434:51
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:98:30)
+      at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:109:13
+      at <anonymous>

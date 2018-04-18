@@ -18298,6 +18298,7 @@ var App = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
     _this.state = {
+      board: ['', '', '', '', '', '', '', '', ''],
       firstPlayer: 'X',
       secondPlayer: '0',
       firstPlayerCount: 0,
@@ -18326,15 +18327,31 @@ var App = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var row1 = this.state.board.slice(0, 3);
+      var row2 = this.state.board.slice(3, 6);
+      var row3 = this.state.board.slice(6, 9);
       return _react2.default.createElement(
         'div',
         { className: 'board' },
         _react2.default.createElement(
           'div',
           { className: 'row' },
-          _react2.default.createElement('div', { className: 'top-left box', onClick: this.handleClick }),
-          _react2.default.createElement('div', { className: 'top-middle box' }),
-          _react2.default.createElement('div', { className: 'top-right box' })
+          row1
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'top-left box', onClick: this.handleClick },
+          this.state.board[0]
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'top-middle box' },
+          this.state.board[1]
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'top-right box' },
+          this.state.board[2]
         ),
         _react2.default.createElement(
           'div',
@@ -18342,25 +18359,37 @@ var App = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'middle-left box' },
-            ' '
+            this.state.board[3]
           ),
           _react2.default.createElement(
             'div',
             { className: 'middle box' },
-            ' '
+            this.state.board[4]
           ),
           _react2.default.createElement(
             'div',
             { className: 'middle-right box' },
-            ' '
+            this.state.board[5]
           )
         ),
         _react2.default.createElement(
           'div',
           { className: 'row' },
-          _react2.default.createElement('div', { className: 'bottom-left box' }),
-          _react2.default.createElement('div', { className: 'bottm-middle box' }),
-          _react2.default.createElement('div', { className: 'bottom-right box' })
+          _react2.default.createElement(
+            'div',
+            { className: 'bottom-left box' },
+            this.state.board[6]
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'bottm-middle box' },
+            this.state.board[7]
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'bottom-right box' },
+            this.state.board[8]
+          )
         )
       );
     }

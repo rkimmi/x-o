@@ -1,1 +1,1 @@
-# React-redux boilerplate
+# X/0

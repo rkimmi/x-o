@@ -4,25 +4,24 @@ class App extends React.Component {
   constructor (props) {
     super (props)
     this.state = {
-        playerOutput: '',
+        firstPlayer: 'X',
+        secondPlayer: '0',
         firstPlayerCount: 0,
-        secondPlayerCount: 0
+        secondPlayerCount: 0,
     }
     this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick() {
-   if (this.state.firstPlayerCount === 0) {
+   if (this.state.firstPlayerCount <= 0) {
     this.setState({
-      playerOutput: 'X',
       firstPlayerCount: 1,
-      secondPlayerCount: 0
+      secondPlayerCount: 0,
     })
-  if (this.state.secondPlayerCount === 0) {
+  if (this.state.secondPlayerCount <= 0) {
     this.setState({
-      playerOutput: '0',
       firstPlayerCount: 0,
-      secondPlayerCount: 1
+      secondPlayerCount: 1,
     })
   }
   }
@@ -31,23 +30,22 @@ class App extends React.Component {
   render () {
     return (
       <div className='board'>
-            <h1>{this.state.firstPlayer}</h1>
         <div className='row'>
-          <div className='top-left spot' onClick={this.handleClick}>{this.state.playerOutput}</div>
-          <div className='top-middle spot'></div>
-          <div className='top-right spot'></div>
+          <div className='top-left box' onClick={this.handleClick}></div>
+          <div className='top-middle box'></div>
+          <div className='top-right box'></div>
         </div>
 
         <div className='row'>
-          <div className='middle-left spot'> </div>
-          <div className='middle spot'> </div>
-          <div className='middle-right spot'> </div>
+          <div className='middle-left box'> </div>
+          <div className='middle box'> </div>
+          <div className='middle-right box'> </div>
         </div>
 
         <div className='row'>
-          <div className='bottom-left spot'></div>
-          <div className='bottm-middle spot'></div>
-          <div className='bottom-right spot'></div>
+          <div className='bottom-left box'></div>
+          <div className='bottm-middle box'></div>
+          <div className='bottom-right box'></div>
         </div>
       </div>
     )

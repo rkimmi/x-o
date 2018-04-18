@@ -18298,7 +18298,8 @@ var App = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
     _this.state = {
-      playerOutput: '',
+      firstPlayer: 'X',
+      secondPlayer: '0',
       firstPlayerCount: 0,
       secondPlayerCount: 0
     };
@@ -18309,15 +18310,13 @@ var App = function (_React$Component) {
   _createClass(App, [{
     key: 'handleClick',
     value: function handleClick() {
-      if (this.state.firstPlayerCount === 0) {
+      if (this.state.firstPlayerCount <= 0) {
         this.setState({
-          playerOutput: 'X',
           firstPlayerCount: 1,
           secondPlayerCount: 0
         });
-        if (this.state.secondPlayerCount === 0) {
+        if (this.state.secondPlayerCount <= 0) {
           this.setState({
-            playerOutput: '0',
             firstPlayerCount: 0,
             secondPlayerCount: 1
           });
@@ -18331,46 +18330,37 @@ var App = function (_React$Component) {
         'div',
         { className: 'board' },
         _react2.default.createElement(
-          'h1',
-          null,
-          this.state.firstPlayer
+          'div',
+          { className: 'row' },
+          _react2.default.createElement('div', { className: 'top-left box', onClick: this.handleClick }),
+          _react2.default.createElement('div', { className: 'top-middle box' }),
+          _react2.default.createElement('div', { className: 'top-right box' })
         ),
         _react2.default.createElement(
           'div',
           { className: 'row' },
           _react2.default.createElement(
             'div',
-            { className: 'top-left spot', onClick: this.handleClick },
-            this.state.playerOutput
-          ),
-          _react2.default.createElement('div', { className: 'top-middle spot' }),
-          _react2.default.createElement('div', { className: 'top-right spot' })
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'row' },
-          _react2.default.createElement(
-            'div',
-            { className: 'middle-left spot' },
+            { className: 'middle-left box' },
             ' '
           ),
           _react2.default.createElement(
             'div',
-            { className: 'middle spot' },
+            { className: 'middle box' },
             ' '
           ),
           _react2.default.createElement(
             'div',
-            { className: 'middle-right spot' },
+            { className: 'middle-right box' },
             ' '
           )
         ),
         _react2.default.createElement(
           'div',
           { className: 'row' },
-          _react2.default.createElement('div', { className: 'bottom-left spot' }),
-          _react2.default.createElement('div', { className: 'bottm-middle spot' }),
-          _react2.default.createElement('div', { className: 'bottom-right spot' })
+          _react2.default.createElement('div', { className: 'bottom-left box' }),
+          _react2.default.createElement('div', { className: 'bottm-middle box' }),
+          _react2.default.createElement('div', { className: 'bottom-right box' })
         )
       );
     }

@@ -9,7 +9,7 @@
     flex-direction: row;
 }
 
-.spot {
+.box {
     border-style: dashed;
     border-width: 1px;  
     padding: 10px;

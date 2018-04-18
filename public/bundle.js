@@ -18299,19 +18299,16 @@ var App = function (_React$Component) {
 
     _this.state = {
       board: ['', '', '', '', '', '', '', '', ''],
-      firstPlayer: 'X',
-      secondPlayer: '0',
+      activePlayer: '',
       firstPlayerCount: 0,
       secondPlayerCount: 0
     };
+    _this.checkPlayer = _this.checkPlayer.bind(_this);
     _this.handleClick = _this.handleClick.bind(_this);
     return _this;
   }
 
   _createClass(App, [{
-    key: 'handleClick',
-    value: function handleClick() {}
-  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -18322,17 +18319,17 @@ var App = function (_React$Component) {
           { className: 'row' },
           _react2.default.createElement(
             'div',
-            { className: 'top-left box', onClick: this.handleClick },
+            { className: 'top-left box', onClick: this.handleClick(0) },
             this.state.board[0]
           ),
           _react2.default.createElement(
             'div',
-            { className: 'top-middle box' },
+            { className: 'top-middle box', onClick: this.handleClick(1) },
             this.state.board[1]
           ),
           _react2.default.createElement(
             'div',
-            { className: 'top-right box' },
+            { className: 'top-right box', onClick: this.handleClick(2) },
             this.state.board[2]
           )
         ),
@@ -18341,17 +18338,17 @@ var App = function (_React$Component) {
           { className: 'row' },
           _react2.default.createElement(
             'div',
-            { className: 'middle-left box' },
+            { className: 'middle-left box', onClick: this.handleClick(3) },
             this.state.board[3]
           ),
           _react2.default.createElement(
             'div',
-            { className: 'middle box' },
+            { className: 'middle box', onClick: this.handleClick(4) },
             this.state.board[4]
           ),
           _react2.default.createElement(
             'div',
-            { className: 'middle-right box' },
+            { className: 'middle-right box', onClick: this.handleClick(5) },
             this.state.board[5]
           )
         ),
@@ -18360,21 +18357,45 @@ var App = function (_React$Component) {
           { className: 'row' },
           _react2.default.createElement(
             'div',
-            { className: 'bottom-left box' },
+            { className: 'bottom-left box', onClick: this.handleClick(6) },
             this.state.board[6]
           ),
           _react2.default.createElement(
             'div',
-            { className: 'bottm-middle box' },
+            { className: 'bottm-middle box', onClick: this.handleClick(7) },
             this.state.board[7]
           ),
           _react2.default.createElement(
             'div',
-            { className: 'bottom-right box' },
+            { className: 'bottom-right box', onClick: this.handleClick(8) },
             this.state.board[8]
           )
         )
       );
+    }
+  }, {
+    key: 'checkPlayer',
+    value: function checkPlayer() {
+      if (this.state.firstPlayerCount <= 0) {
+        this.setState({
+          firstPlayerCount: 1,
+          secondPlayerCount: 0,
+          activePlayer: 'X'
+        });
+      }
+      if (this.state.secondPlayerCount <= 0) {
+        this.setState({
+          firstPlayerCount: 0,
+          secondPlayerCount: 1,
+          activePlayer: '0'
+        });
+      }
+    }
+  }, {
+    key: 'handleClick',
+    value: function handleClick(num) {
+      this.checkPlayer();
+      this.state.board.splice(num, 1, this.state.activePlayer);
     }
   }]);
 

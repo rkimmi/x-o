@@ -38,21 +38,20 @@ class App extends React.Component {
   }
 
   checkPlayer () {
-    if (this.state.firstPlayerCount <= 0) { 
+   (this.state.firstPlayerCount <= 0) ?
       this.setState({
         firstPlayerCount: 1,
         secondPlayerCount: 0,
         activePlayer: 'X'
       })
-    }
-    if (this.state.secondPlayerCount <= 0) {
+      :
+    (this.state.secondPlayerCount <= 0) 
       this.setState({
         firstPlayerCount: 0,
         secondPlayerCount: 1,
         activePlayer: '0',
       })
     }
-  }
     
   handleClick (num) {
     this.checkPlayer() 

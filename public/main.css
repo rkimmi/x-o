@@ -1,0 +1,16 @@
+.board {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.spot {
+    border-style: dashed;
+    border-width: 1px;  
+    padding: 10px;
+}

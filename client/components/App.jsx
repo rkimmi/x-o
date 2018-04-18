@@ -13,31 +13,19 @@ class App extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick() {
-   if (this.state.firstPlayerCount <= 0) {
-    this.setState({
-      firstPlayerCount: 1,
-      secondPlayerCount: 0,
-    })
-  if (this.state.secondPlayerCount <= 0) {
-    this.setState({
-      firstPlayerCount: 0,
-      secondPlayerCount: 1,
-    })
+    
+  handleClick () {
+    
   }
-  }
-}
 
   render () {
-    let row1 = this.state.board.slice(0, 3)
-    let row2 = this.state.board.slice(3, 6)
-    let row3 = this.state.board.slice(6, 9)
     return (
       <div className='board'>
-        <div className='row'>{row1}</div>
+        <div className='row'>
           <div className='top-left box' onClick={this.handleClick}>{this.state.board[0]}</div>
           <div className='top-middle box'>{this.state.board[1]}</div>
           <div className='top-right box'>{this.state.board[2]}</div>
+        </div>
 
         <div className='row'>
           <div className='middle-left box'>{this.state.board[3]}</div>

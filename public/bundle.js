@@ -18310,48 +18310,31 @@ var App = function (_React$Component) {
 
   _createClass(App, [{
     key: 'handleClick',
-    value: function handleClick() {
-      if (this.state.firstPlayerCount <= 0) {
-        this.setState({
-          firstPlayerCount: 1,
-          secondPlayerCount: 0
-        });
-        if (this.state.secondPlayerCount <= 0) {
-          this.setState({
-            firstPlayerCount: 0,
-            secondPlayerCount: 1
-          });
-        }
-      }
-    }
+    value: function handleClick() {}
   }, {
     key: 'render',
     value: function render() {
-      var row1 = this.state.board.slice(0, 3);
-      var row2 = this.state.board.slice(3, 6);
-      var row3 = this.state.board.slice(6, 9);
       return _react2.default.createElement(
         'div',
         { className: 'board' },
         _react2.default.createElement(
           'div',
           { className: 'row' },
-          row1
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'top-left box', onClick: this.handleClick },
-          this.state.board[0]
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'top-middle box' },
-          this.state.board[1]
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'top-right box' },
-          this.state.board[2]
+          _react2.default.createElement(
+            'div',
+            { className: 'top-left box', onClick: this.handleClick },
+            this.state.board[0]
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'top-middle box' },
+            this.state.board[1]
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'top-right box' },
+            this.state.board[2]
+          )
         ),
         _react2.default.createElement(
           'div',

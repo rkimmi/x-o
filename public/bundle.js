@@ -18310,24 +18310,26 @@ var App = function (_React$Component) {
 
   _createClass(App, [{
     key: 'checkPlayer',
-    value: function checkPlayer() {
+    value: function checkPlayer() {}
+  }, {
+    key: 'handleClick',
+    value: function handleClick(loc) {
+      var playerOne = 'X';
+      var playerTwo = '0';
       if (this.state.playerOneTurn === true) {
         this.setState({
           playerOneTurn: false,
           playerTwoTurn: true
         });
+        this.state.board.splice(loc, 1, playerOne);
       }
       if (this.state.playerTwoTurn === true) {
         this.setState({
           playerOneTurn: true,
           playerTwoTurn: false
         });
+        this.state.board.splice(loc, 1, playerTwo);
       }
-    }
-  }, {
-    key: 'handleClick',
-    value: function handleClick(loc) {
-      this.checkPlayer();
     }
   }, {
     key: 'render',

@@ -14,23 +14,27 @@ class App extends React.Component {
   }
 
   checkPlayer () {
-   if (this.state.playerOneTurn === true) {
+
+  }
+
+  handleClick (loc) {
+    const playerOne = 'X'
+    const playerTwo = '0'
+    if (this.state.playerOneTurn === true) {
       this.setState({
       playerOneTurn: false,
       playerTwoTurn: true
     })
+    this.state.board.splice(loc, 1, playerOne)
   }
   if (this.state.playerTwoTurn === true) {
     this.setState({
       playerOneTurn: true,
       playerTwoTurn: false
     })
+    this.state.board.splice(loc, 1, playerTwo)
   }
 }
-
-  handleClick (loc) {
-    this.checkPlayer()
-  }
 
   render () {
     return (

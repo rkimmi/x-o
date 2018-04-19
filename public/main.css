@@ -1,7 +1,7 @@
 .board {
     display: flex;
     flex-direction: column;
-    width: 100px;
+    padding: 80px;
 }
 
 .row {
@@ -12,5 +12,7 @@
 .box {
     border-style: dashed;
     border-width: 1px;  
+    width: 80px;
+    height: 80px;
     padding: 10px;
 }

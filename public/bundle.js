@@ -18392,17 +18392,23 @@ var App = function (_React$Component) {
           { className: 'row' },
           _react2.default.createElement(
             'div',
-            { className: 'bottom-left box' },
+            { className: 'bottom-left box', onClick: function onClick() {
+                return _this2.handleClick(6);
+              } },
             this.state.board[6]
           ),
           _react2.default.createElement(
             'div',
-            { className: 'bottm-middle box' },
+            { className: 'bottm-middle box', onClick: function onClick() {
+                return _this2.handleClick(7);
+              } },
             this.state.board[7]
           ),
           _react2.default.createElement(
             'div',
-            { className: 'bottom-right box' },
+            { className: 'bottom-right box', onClick: function onClick() {
+                return _this2.handleClick(8);
+              } },
             this.state.board[8]
           )
         )

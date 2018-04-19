@@ -48,9 +48,9 @@ class App extends React.Component {
         </div>
 
         <div className='row'>
-          <div className='bottom-left box'>{this.state.board[6]}</div>
-          <div className='bottm-middle box'>{this.state.board[7]}</div>
-          <div className='bottom-right box'>{this.state.board[8]}</div>
+          <div className='bottom-left box' onClick={() => this.handleClick(6)}>{this.state.board[6]}</div>
+          <div className='bottm-middle box' onClick={() => this.handleClick(7)}>{this.state.board[7]}</div>
+          <div className='bottom-right box' onClick={() => this.handleClick(8)}>{this.state.board[8]}</div>
         </div>
       </div>
     )

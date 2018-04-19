@@ -18300,8 +18300,8 @@ var App = function (_React$Component) {
     _this.state = {
       board: ['', '', '', '', '', '', '', '', ''],
       activePlayer: '',
-      firstPlayerCount: 0,
-      secondPlayerCount: 0
+      playerOneTurn: true,
+      playerTwoTurn: false
     };
     _this.checkPlayer = _this.checkPlayer.bind(_this);
     _this.handleClick = _this.handleClick.bind(_this);
@@ -18309,8 +18309,31 @@ var App = function (_React$Component) {
   }
 
   _createClass(App, [{
+    key: 'checkPlayer',
+    value: function checkPlayer() {
+      if (this.state.playerOneTurn === true) {
+        this.setState({
+          playerOneTurn: false,
+          playerTwoTurn: true
+        });
+      }
+      if (this.state.playerTwoTurn === true) {
+        this.setState({
+          playerOneTurn: true,
+          playerTwoTurn: false
+        });
+      }
+    }
+  }, {
+    key: 'handleClick',
+    value: function handleClick(loc) {
+      this.checkPlayer();
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       return _react2.default.createElement(
         'div',
         { className: 'board' },
@@ -18319,17 +18342,23 @@ var App = function (_React$Component) {
           { className: 'row' },
           _react2.default.createElement(
             'div',
-            { className: 'top-left box', onClick: this.handleClick(0) },
+            { className: 'top-left box', onClick: function onClick() {
+                return _this2.handleClick(0);
+              } },
             this.state.board[0]
           ),
           _react2.default.createElement(
             'div',
-            { className: 'top-middle box', onClick: this.handleClick(1) },
+            { className: 'top-middle box', onClick: function onClick() {
+                return _this2.handleClick(1);
+              } },
             this.state.board[1]
           ),
           _react2.default.createElement(
             'div',
-            { className: 'top-right box', onClick: this.handleClick(2) },
+            { className: 'top-right box', onClick: function onClick() {
+                return _this2.handleClick(2);
+              } },
             this.state.board[2]
           )
         ),
@@ -18338,17 +18367,23 @@ var App = function (_React$Component) {
           { className: 'row' },
           _react2.default.createElement(
             'div',
-            { className: 'middle-left box', onClick: this.handleClick(3) },
+            { className: 'middle-left box', onClick: function onClick() {
+                return _this2.handleClick(3);
+              } },
             this.state.board[3]
           ),
           _react2.default.createElement(
             'div',
-            { className: 'middle box', onClick: this.handleClick(4) },
+            { className: 'middle box', onClick: function onClick() {
+                return _this2.handleClick(4);
+              } },
             this.state.board[4]
           ),
           _react2.default.createElement(
             'div',
-            { className: 'middle-right box', onClick: this.handleClick(5) },
+            { className: 'middle-right box', onClick: function onClick() {
+                return _this2.handleClick(5);
+              } },
             this.state.board[5]
           )
         ),
@@ -18357,41 +18392,21 @@ var App = function (_React$Component) {
           { className: 'row' },
           _react2.default.createElement(
             'div',
-            { className: 'bottom-left box', onClick: this.handleClick(6) },
+            { className: 'bottom-left box' },
             this.state.board[6]
           ),
           _react2.default.createElement(
             'div',
-            { className: 'bottm-middle box', onClick: this.handleClick(7) },
+            { className: 'bottm-middle box' },
             this.state.board[7]
           ),
           _react2.default.createElement(
             'div',
-            { className: 'bottom-right box', onClick: this.handleClick(8) },
+            { className: 'bottom-right box' },
             this.state.board[8]
           )
         )
       );
-    }
-  }, {
-    key: 'checkPlayer',
-    value: function checkPlayer() {
-      this.state.firstPlayerCount <= 0 ? this.setState({
-        firstPlayerCount: 1,
-        secondPlayerCount: 0,
-        activePlayer: 'X'
-      }) : this.state.secondPlayerCount <= 0;
-      this.setState({
-        firstPlayerCount: 0,
-        secondPlayerCount: 1,
-        activePlayer: '0'
-      });
-    }
-  }, {
-    key: 'handleClick',
-    value: function handleClick(num) {
-      this.checkPlayer();
-      this.state.board.splice(num, 1, this.state.activePlayer);
     }
   }]);
 

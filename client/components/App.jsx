@@ -9,31 +9,25 @@ class App extends React.Component {
         playerOneTurn: true,
         playerTwoTurn: false
     }
-    this.checkPlayer = this.checkPlayer.bind(this)
     this.handleClick = this.handleClick.bind(this)
   }
 
-  checkPlayer () {
-
-  }
-
   handleClick (loc) {
-    const playerOne = 'X'
-    const playerTwo = '0'
-    if (this.state.playerOneTurn === true) {
+    if (this.state.playerOneTurn) {
       this.setState({
       playerOneTurn: false,
-      playerTwoTurn: true
+      playerTwoTurn: true,
+      activePlayer: '0'
     })
-    this.state.board.splice(loc, 1, playerOne)
   }
-  if (this.state.playerTwoTurn === true) {
+  if (this.state.playerTwoTurn) {
     this.setState({
       playerOneTurn: true,
-      playerTwoTurn: false
+      playerTwoTurn: false,
+      activePlayer: 'X'
     })
-    this.state.board.splice(loc, 1, playerTwo)
   }
+  this.state.board.splice(loc, 1, this.state.activePlayer)
 }
 
   render () {

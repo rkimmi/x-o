@@ -18303,33 +18303,28 @@ var App = function (_React$Component) {
       playerOneTurn: true,
       playerTwoTurn: false
     };
-    _this.checkPlayer = _this.checkPlayer.bind(_this);
     _this.handleClick = _this.handleClick.bind(_this);
     return _this;
   }
 
   _createClass(App, [{
-    key: 'checkPlayer',
-    value: function checkPlayer() {}
-  }, {
     key: 'handleClick',
     value: function handleClick(loc) {
-      var playerOne = 'X';
-      var playerTwo = '0';
-      if (this.state.playerOneTurn === true) {
+      if (this.state.playerOneTurn) {
         this.setState({
           playerOneTurn: false,
-          playerTwoTurn: true
+          playerTwoTurn: true,
+          activePlayer: '0'
         });
-        this.state.board.splice(loc, 1, playerOne);
       }
-      if (this.state.playerTwoTurn === true) {
+      if (this.state.playerTwoTurn) {
         this.setState({
           playerOneTurn: true,
-          playerTwoTurn: false
+          playerTwoTurn: false,
+          activePlayer: 'X'
         });
-        this.state.board.splice(loc, 1, playerTwo);
       }
+      this.state.board.splice(loc, 1, this.state.activePlayer);
     }
   }, {
     key: 'render',

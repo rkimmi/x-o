@@ -12,23 +12,23 @@ class App extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick (loc) {
+  handleClick(loc) {
     if (this.state.playerOneTurn) {
-      this.setState({
-      playerOneTurn: false,
-      playerTwoTurn: true,
-      activePlayer: '0'
-    })
+      this.setState({ 
+        playerOneTurn: false, 
+        playerTwoTurn: true, 
+        activePlayer: '0' 
+      })
+    }
+    if (this.state.playerTwoTurn) {
+      this.setState({ 
+        playerOneTurn: true, 
+        playerTwoTurn: false, 
+        activePlayer: 'X' 
+      })
+    }
+    this.state.board.splice(loc, 1, this.state.activePlayer)
   }
-  if (this.state.playerTwoTurn) {
-    this.setState({
-      playerOneTurn: true,
-      playerTwoTurn: false,
-      activePlayer: 'X'
-    })
-  }
-  this.state.board.splice(loc, 1, this.state.activePlayer)
-}
 
   render () {
     return (

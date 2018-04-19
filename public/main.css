@@ -10,9 +10,11 @@
 }
 
 .box {
-    border-style: dashed;
-    border-width: 1px;  
+    /* border: 1px solid black; */
     width: 80px;
     height: 80px;
     padding: 10px;
+    font-size: 65px;
+    font-family: 'Gaegu', cursive;
+    text-align: center;
 }

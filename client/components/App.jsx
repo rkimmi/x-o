@@ -41,7 +41,7 @@ class App extends React.Component {
   checkForWin () {
     this.checkRows()
     this.checkCols()    
-    this.checkDiagonal()
+    this.checkDiagonal() // none of these are working well, need new strategy
   }
 
   checkRows () {

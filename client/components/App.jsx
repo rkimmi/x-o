@@ -13,6 +13,7 @@ class App extends React.Component {
     this.handleClick = this.handleClick.bind(this)
     this.checkForWin = this.checkForWin.bind(this)
     this.checkRows = this.checkRows.bind(this)
+    this.checkCols = this.checkCols.bind(this)
   }
 
   handleClick(loc) {
@@ -58,7 +59,28 @@ class App extends React.Component {
         winner: winner
       })
     }
+    this.checkCols()
 }
+
+  checkCols () {
+    const board = this.state.board
+    let winner = null
+
+    if (board[0] === board[3] && board[3] === board[6]) {
+      winner = board[0]
+    }
+    else if (board[1] === board[4] && board[4] === board[7]) {
+      winner = board[1]
+    }
+    else if (board[2] === board[5] && board[5] === board[8]) {
+      winner = board[2] 
+    }
+    if (winner) {
+      this.setState({
+        winner: winner
+      })
+    }
+  }
 
   render () {
     return (

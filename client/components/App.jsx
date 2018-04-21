@@ -5,11 +5,13 @@ class App extends React.Component {
     super (props)
     this.state = {
         board: [ '', '', '', '', '', '', '', '', '' ],
-        activePlayer: '',
+        activePlayer: 'X',
         playerOneTurn: true,
         playerTwoTurn: false
     }
     this.handleClick = this.handleClick.bind(this)
+    this.checkForWin = this.checkForWin.bind(this)
+    this.checkRows = this.checkRows.bind(this)
   }
 
   handleClick(loc) {
@@ -30,11 +32,30 @@ class App extends React.Component {
     if (this.state.board[loc] === '') {
       this.state.board.splice(loc, 1, this.state.activePlayer)
     }
+    this.checkForWin()
   }
 
   checkForWin () {
-
+    this.checkRows()
   }
+
+  checkRows () {
+    const board = this.state.board
+    let winner = null
+
+    if (board[0] === board[1] && board[1] === board[2]) {
+      winner = board[0]
+    }
+    else if (board[3] === board[4] && board[4] === board[5]) {
+      winner = board[3] 
+    }
+    else if (board[6] === board[7] && board[7] === board[8]) {
+      winner = board[6]
+    }
+    if (winner) {
+      console.log('player ' + winner + ' wins!')
+    }
+}
 
   render () {
     return (
@@ -60,5 +81,6 @@ class App extends React.Component {
     )
   }
 }
+
 
 export default App

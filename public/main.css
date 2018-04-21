@@ -1,20 +1,25 @@
 .board {
     display: flex;
     flex-direction: column;
-    padding: 80px;
+    padding-top: 100px;
+    align-content: center;
+    width: 100%;
 }
 
 .row {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .box {
-    /* border: 1px solid black; */
-    width: 80px;
-    height: 80px;
+    border: 2px dashed #edeaea;
+    border-radius: 10px;
+    width: 180px;
+    height: 180px;
     padding: 10px;
-    font-size: 65px;
+    font-size: 140px;
     font-family: 'Gaegu', cursive;
+    color: #3f3d3d;
     text-align: center;
 }

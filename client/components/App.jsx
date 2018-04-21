@@ -7,7 +7,8 @@ class App extends React.Component {
         board: [ '', '', '', '', '', '', '', '', '' ],
         activePlayer: 'X',
         playerOneTurn: true,
-        playerTwoTurn: false
+        playerTwoTurn: false,
+        winner: ''
     }
     this.handleClick = this.handleClick.bind(this)
     this.checkForWin = this.checkForWin.bind(this)
@@ -53,7 +54,9 @@ class App extends React.Component {
       winner = board[6]
     }
     if (winner) {
-      console.log('player ' + winner + ' wins!')
+      this.setState({
+        winner: winner
+      })
     }
 }
 
@@ -76,6 +79,10 @@ class App extends React.Component {
           <div className='bottom-left box' onClick={() => this.handleClick(6)}>{this.state.board[6]}</div>
           <div className='bottm-middle box' onClick={() => this.handleClick(7)}>{this.state.board[7]}</div>
           <div className='bottom-right box' onClick={() => this.handleClick(8)}>{this.state.board[8]}</div>
+        </div>
+        <div className='row'>
+          {`${this.state.winner}` &&
+            <div className='win'>{this.state.winner} wins! </div>}
         </div>
       </div>
     )

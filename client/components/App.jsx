@@ -27,8 +27,11 @@ class App extends React.Component {
         activePlayer: 'X' 
       })
     }
-    this.state.board.splice(loc, 1, this.state.activePlayer)
+    if (this.state.board[loc] === '') {
+      this.state.board.splice(loc, 1, this.state.activePlayer)
+    }
   }
+
 
   render () {
     return (

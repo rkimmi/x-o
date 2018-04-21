@@ -88,8 +88,8 @@ class App extends React.Component {
     const board = this.state.board
     let winner = null
 
-    if (board[1] === board[4] && board[4] === board[8]) {
-      winner = board[1] 
+    if (board[0] === board[4] && board[4] === board[8]) {
+      winner = board[0] 
     }
     else if (board[2] === board[4] && board[4] === board[6]) {
       winner = board[2] 

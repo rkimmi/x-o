@@ -54,7 +54,7 @@ class App extends React.Component {
     else if (board[3] === board[4] && board[4] === board[5]) {
       winner = board[3] 
     }
-    if (board[6] === board[7] && board[7] === board[8]) {
+    else if (board[6] === board[7] && board[7] === board[8]) {
       winner = board[6]
     }
     if (winner) {

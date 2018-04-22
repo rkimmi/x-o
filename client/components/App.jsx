@@ -18,14 +18,14 @@ class App extends React.Component {
   }
 
   handleClick(loc) {
-    if (this.state.playerOneTurn) {
+    if (this.state.board[loc] === '' && this.state.playerOneTurn) {
       this.setState({ 
         playerOneTurn: false, 
         playerTwoTurn: true, 
         activePlayer: '0' 
       })
     }
-    if (this.state.playerTwoTurn) {
+    if (this.state.board[loc] === '' && this.state.playerTwoTurn) {
       this.setState({ 
         playerOneTurn: true, 
         playerTwoTurn: false, 
